@@ -1,0 +1,13 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+<header class="text-center py-5 bg-light border-bottom">
+    <div class="container">
+        <img src="~/images/access-denied-alert-vector-illus.jpg" class="img-fluid mb-4" alt="Access Denied" style="max-width: 300px;">
+        <h1 class="display-4 text-danger">@ViewData["Title"]</h1>
+        <p class="lead text-muted mt-3">You do not have access to this resource.</p>
+    </div>
+</header>

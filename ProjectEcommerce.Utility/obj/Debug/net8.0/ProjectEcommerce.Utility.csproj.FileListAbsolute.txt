@@ -1,0 +1,12 @@
+D:\C#\MVC\ProjectEcommerce.Utility\bin\Debug\net8.0\ProjectEcommerce.Utility.deps.json
+D:\C#\MVC\ProjectEcommerce.Utility\bin\Debug\net8.0\ProjectEcommerce.Utility.dll
+D:\C#\MVC\ProjectEcommerce.Utility\bin\Debug\net8.0\ProjectEcommerce.Utility.pdb
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.AssemblyInfoInputs.cache
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.AssemblyInfo.cs
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.csproj.CoreCompileInputs.cache
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.dll
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\refint\ProjectEcommerce.Utility.dll
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.pdb
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ref\ProjectEcommerce.Utility.dll
+D:\C#\MVC\ProjectEcommerce.Utility\obj\Debug\net8.0\ProjectEcommerce.Utility.csproj.AssemblyReference.cache

@@ -1,0 +1,188 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="shortcut icon" type="image/x-icon" href="~/assets/imgs/theme/icons/favicon.png">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/adminemployee/style.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+	<link rel="stylesheet" href="//cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+	<title>Shop Employee</title>
+	<style>
+		/* From Uiverse.io by Ali-Tahmazi99 */
+		
+		button {
+			display: inline-block;
+			width: 150px;
+			height: 50px;
+			font-size: 18px;
+			border-radius: 10px;
+			border: 1px solid #03045e;
+			position: relative;
+			overflow: hidden;
+			transition: all 0.5s ease-in;
+			z-index: 1;
+		}
+
+			button::before,
+			button::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				width: 0;
+				height: 100%;
+				transform: skew(15deg);
+				transition: all 0.5s;
+				overflow: hidden;
+				z-index: -1;
+			}
+
+			button::before {
+				left: -10px;
+				background: #240046;
+			}
+
+			button::after {
+				right: -10px;
+				background: #5a189a;
+			}
+
+			button:hover::before,
+			button:hover::after {
+				width: 58%;
+			}
+
+			button:hover span {
+				color: #e0aaff;
+				transition: 0.3s;
+			}
+
+			button span {
+				color: #03045e;
+				font-size: 18px;
+				transition: all 0.3s ease-in;
+			}
+	</style>
+</head>
+<body>
+	<!-- Sidebar -->
+	<section id="sidebar">
+		<a href="#" class="brand">
+			<i class='bx bxs-store'></i>
+			<span class="text">CRUD Seller</span>
+		</a>
+		<ul class="side-menu top">
+			<li>
+				<a href="~/Seller/DashboardSeller">
+					<i class='bx bxs-dashboard'></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a asp-action="Index" asp-controller="Category">
+					<i class='bx bxs-shopping-bag-alt'></i>
+					<span class="text">Categories</span>
+				</a>
+			</li>
+			<li>
+				<a asp-action="Index" asp-controller="Product">
+					<i class='bx bxs-bar-chart-square'></i>
+					<span class="text">Products</span>
+				</a>
+			</li>
+			<li>
+				<a asp-action="Index" asp-controller="Order">
+					<i class='bx bxs-box'></i>
+					<span class="text">Order</span>
+				</a>
+			</li>
+			<li>
+				<a asp-action="Index" asp-controller="User">
+					<i class='bx bxs-user-detail'></i>
+					<span class="text">User Management</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-chat'></i>
+					<span class="text">Message</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="#">
+					<i class='bx bxs-cog'></i>
+					<span class="text">Setting</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="logout">
+					<i class='bx bxs-log-out-circle'></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- Sidebar -->
+	<!-- Content -->
+	<section id="content">
+		<nav>
+			<i class='bx bx-menu'></i>
+			<a href="#" class="nav-link">Categories</a>
+			<form action="">
+				<div class="form-input">
+					<input type="search" placeholder="Search....">
+					<button type="submit" class="btn-search"><i class='bx bx-search'></i></button>
+				</div>
+			</form>
+			<a href="#" class="notification">
+				<i class='bx bxs-bell'></i>
+				<span class="num">8</span>
+			</a>
+			<div style="display: flex;justify-content: space-around;padding: 10px;gap: 20px;align-items: center;">
+				<a href="#">
+					@{ApplicationUser applicationUser = (ApplicationUser)await UserManager.GetUserAsync(User);
+					var name = applicationUser.Name;
+					<li>
+						<i class="fi-rs-key"></i>
+						<a id="manage" class="text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+							Hello <br /> @name
+						</a>
+					</li>
+					<li>
+						<form id="logoutForm" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                <button type="submit">
+                                    <span>
+                                        Logout
+                                    </span>
+                                </button>
+						</form>
+					</li>
+					}
+				</a>
+				<a href="#" class="profile">
+					<img src="~/adminemployee/img/people.png" alt="">
+				</a>
+			</div>
+			
+		</nav>
+		@RenderBody()
+		<!-- MAIN -->
+	</section>
+	<!-- Content -->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/adminemployee/scripts.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="//cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+	<script src="https://cdn.tiny.cloud/1/g28lhnxtlihu4l4a381gw7tz47voznshwbi10lmsvlekrfme/tinymce/6/tinymce.min.js" referrerpolicy="origin">
+		<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script></script>
+</body>
+</html>
+@RenderSection("Scripts", required: false)

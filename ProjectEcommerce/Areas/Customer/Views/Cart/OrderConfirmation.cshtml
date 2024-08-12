@@ -1,0 +1,12 @@
+﻿@model int
+
+<div class="container row pt-4">
+    <div class="col-12 text-center">
+        <div class="alert alert-success" role="alert">
+            <h1 class="display-4 text-primary mb-4">Order Placed Successfully</h1>
+            <p class="lead">Your Order Number is: <strong>@Model</strong></p>
+        </div>
+        
+        <a asp-action="Index" asp-controller="Home" class="btn btn-primary btn-lg mt-4">Return to Home</a>
+    </div>
+</div>
